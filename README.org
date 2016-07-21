@@ -5,16 +5,46 @@ Part of my personal home automation efforts.
 
 Done mostly by manual reverse-engineering of the protocol, but I also took a look at [[https://github.com/ties/compal_CH7465LG_py][Python tools for this modem line]].
 
+NOTE this code is *UGLY AS HELL* and full of hacks. In particular, it abuses a security vulnerability
+in modem's firmware as a login mechanism. The project is meant to work reliable enough for my personal use
+and is of low enough priority that it will be improved pretty much only if needed.
+
 * Status
   I'm just starting to work on it. The goal is to implement the following set of functionality:
-  - fetching basic information about the modem and status info
-  - fetching a list of all devices connected to the network
+  - [ ] fetching basic information about the modem and status info
+  - [X] fetching a list of all devices connected to the network
   - whatever else I'll end up needing for my home automation setup
 
 * How to use
+  To get a list of devices with IP leases on the modem/router, after adding this repo to your
+  Quicklisp's local projects, run this:
 
-  To be written.
+  #+BEGIN_SRC lisp
+    (ql:quickload :cl-compal-ch7465lg)
+
+    (compal:list-devices)
+
+    ;;; Example output:
+    ;; ((:ETHERNET
+    ;;   ((:INTERFACE . "Ethernet 4") (:IPV4ADDR . "192.168.0.123/24") (:INDEX . "0")
+    ;;    (:INTERFACEID . "2") (:HOSTNAME . "Some Ethernet-plugged device")
+    ;;    (:MACADDR . "00:11:22:33:44:55") (:METHOD . "1")
+    ;;    (:LEASETIME . "00:00:45:26") (:SPEED . "100")))
+    ;;  (:WIFI
+    ;;   ((:INTERFACE . "SOME-PROVIDER-DEFINED-THING") (:IPV4ADDR . "192.168.0.124/24") (:INDEX . "1")
+    ;;    (:INTERFACEID . "3") (:HOSTNAME . "android-somehash")
+    ;;    (:MACADDR . "00:11:22:33:44:55") (:METHOD . "1")
+    ;;    (:LEASETIME . "00:00:34:15") (:SPEED . "39"))
+    ;;   ((:INTERFACE . "SOME-PROVIDER-DEFINED-THING") (:IPV4ADDR . "192.168.0.125/24") (:INDEX . "2")
+    ;;    (:INTERFACEID . "3") (:HOSTNAME . "your laptop")
+    ;;    (:MACADDR . "00:11:22:33:44:55") (:METHOD . "1")
+    ;;    (:LEASETIME . "00:00:52:53") (:SPEED . "104"))
+    ;;   ((:INTERFACE . "SOME-PROVIDER-DEFINED-THING") (:IPV4ADDR . "192.168.0.126/24") (:INDEX . "3")
+    ;;    (:INTERFACEID . "3") (:HOSTNAME . "android-someotherhash")
+    ;;    (:MACADDR . "00:11:22:33:44:55") (:METHOD . "1")
+    ;;    (:LEASETIME . "00:00:38:19") (:SPEED . "39"))))
+  #+END_SRC
 
 * Contributions
 
-  Pull requests always welcome :).
+  Pull requests always welcome :). Especially the kind that make this code not such a big pile of hacks.

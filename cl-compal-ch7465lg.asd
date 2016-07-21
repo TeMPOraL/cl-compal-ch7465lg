@@ -17,7 +17,9 @@
   :encoding :utf-8
   
   :depends-on (#:alexandria
-               #:drakma)
+               #:drakma
+               #:plump
+               #:plump-sexp)
 
   :components ((:file "package")
                (:file "main")))
