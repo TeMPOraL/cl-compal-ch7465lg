@@ -48,3 +48,6 @@ and is of low enough priority that it will be improved pretty much only if neede
 * Contributions
 
   Pull requests always welcome :). Especially the kind that make this code not such a big pile of hacks.
+
+* License
+  MIT. See [[file:LICENSE][LICENSE]] file.

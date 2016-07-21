@@ -8,7 +8,7 @@
   :version "0.0.1"
   :description "Common Lisp tools for interfacing with Compal CH7465LG modem."
 
-  :license "TBD"
+  :license "MIT"
   :homepage "https://github.com/TeMPOraL/cl-compal-ch7465lg"
   :bug-tracker "https://github.com/TeMPOraL/cl-compal-ch7465lg/issues"
   :source-control (:git "https://github.com/TeMPOraL/cl-compal-ch7465lg.git")
