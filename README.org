@@ -1,0 +1,19 @@
+#+title: Compal CH7465LG tools in Common Lisp
+#+startup: hidestars
+
+Part of my personal home automation efforts.
+
+Done mostly by manual reverse-engineering of the protocol, but I also took a look at [[https://github.com/ties/compal_CH7465LG_py][Python tools for this modem line]].
+
+* Status
+  I'm just starting to work on it. The goal is to implement the following set of functionality:
+  - fetching a list of all devices connected to the network
+  - whatever else I'll end up needing for my home automation setup
+
+* How to use
+
+  To be written.
+
+* Contributions
+
+  Pull requests always welcome :).
